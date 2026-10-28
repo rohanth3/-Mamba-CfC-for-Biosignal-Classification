@@ -1,0 +1,22 @@
+{
+    "mamba-only": {
+        "macro_f1": 0.07530386989552444,
+        "balanced_accuracy": 0.09095793762353702
+    },
+    "cfc-only": {
+        "macro_f1": 0.07954188997834116,
+        "balanced_accuracy": 0.10024129940719048
+    },
+    "mamba-cfc": {
+        "macro_f1": 0.07755144705052101,
+        "balanced_accuracy": 0.09662225705744532
+    },
+    "mamba-3l": {
+        "macro_f1": 0.07319419289854195,
+        "balanced_accuracy": 0.0897304953553087
+    },
+    "mamba-width": {
+        "macro_f1": 0.07571611255723541,
+        "balanced_accuracy": 0.09282027858756434
+    }
+}

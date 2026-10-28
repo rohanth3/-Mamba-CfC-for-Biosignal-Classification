@@ -1,0 +1,42 @@
+﻿torch.cuda.is_available(): True
+Device Name: NVIDIA GeForce RTX 4050 Laptop GPU
+
+=== Raw Latency & Memory Benchmark ===
+
+--- Batch Size: 32 ---
+[Mamba-only                         ] INFERENCE : Latency =   4.76 +/-  1.30 ms | Peak Mem =   53.65 MB
+[Mamba-only                         ] TRAINING  : Latency =  14.09 +/-  1.63 ms | Peak Mem =  128.89 MB
+[Mamba-3L (depth control)           ] INFERENCE : Latency =   6.47 +/-  1.41 ms | Peak Mem =   62.27 MB
+[Mamba-3L (depth control)           ] TRAINING  : Latency =  20.99 +/-  3.12 ms | Peak Mem =  165.36 MB
+[Mamba-width-matched (d_model 88)   ] INFERENCE : Latency =   4.57 +/-  1.13 ms | Peak Mem =   78.89 MB
+[Mamba-width-matched (d_model 88)   ] TRAINING  : Latency =  14.87 +/-  2.29 ms | Peak Mem =  172.61 MB
+[CfC-only                           ] INFERENCE : Latency =  16.59 +/-  1.22 ms | Peak Mem =   18.00 MB
+[CfC-only                           ] TRAINING  : Latency =  58.29 +/-  8.54 ms | Peak Mem =   20.72 MB
+[Mamba-CfC                          ] INFERENCE : Latency =  19.62 +/-  2.17 ms | Peak Mem =   61.98 MB
+[Mamba-CfC                          ] TRAINING  : Latency =  66.40 +/- 12.64 ms | Peak Mem =  129.72 MB
+
+--- Batch Size: 256 ---
+[Mamba-only                         ] INFERENCE : Latency =  23.95 +/-  0.18 ms | Peak Mem =  379.94 MB
+[Mamba-only                         ] TRAINING  : Latency =  68.49 +/-  0.30 ms | Peak Mem =  915.18 MB
+[Mamba-3L (depth control)           ] INFERENCE : Latency =  35.79 +/-  0.22 ms | Peak Mem =  380.07 MB
+[Mamba-3L (depth control)           ] TRAINING  : Latency = 102.13 +/-  0.34 ms | Peak Mem = 1205.67 MB
+[Mamba-width-matched (d_model 88)   ] INFERENCE : Latency =  33.18 +/-  0.11 ms | Peak Mem =  514.06 MB
+[Mamba-width-matched (d_model 88)   ] TRAINING  : Latency =  94.67 +/-  0.25 ms | Peak Mem = 1247.38 MB
+[CfC-only                           ] INFERENCE : Latency =  16.16 +/-  3.79 ms | Peak Mem =   23.00 MB
+[CfC-only                           ] TRAINING  : Latency =  51.75 +/-  4.94 ms | Peak Mem =   43.11 MB
+[Mamba-CfC                          ] INFERENCE : Latency =  31.00 +/-  2.25 ms | Peak Mem =  380.15 MB
+[Mamba-CfC                          ] TRAINING  : Latency = 109.44 +/-  8.91 ms | Peak Mem =  916.01 MB
+
+=== Pooling Investigation (Training, 300 steps) ===
+
+Model: Mamba-only
+  Pool: mean  | Step 0 Loss: 3.9800 | Step 299 Loss: 0.0000
+  Pool: last  | Step 0 Loss: 4.0447 | Step 299 Loss: 0.0000
+
+Model: CfC-only
+  Pool: mean  | Step 0 Loss: 3.9719 | Step 299 Loss: 0.8998
+  Pool: last  | Step 0 Loss: 3.9869 | Step 299 Loss: 0.0131
+
+Model: Mamba-CfC
+  Pool: mean  | Step 0 Loss: 3.9702 | Step 299 Loss: 0.5521
+  Pool: last  | Step 0 Loss: 3.9634 | Step 299 Loss: 0.0105

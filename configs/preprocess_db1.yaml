@@ -1,0 +1,7 @@
+window_length: 30
+stride: 10
+filter: "none"
+seed: 42
+train_size: 18
+val_size: 4
+test_size: 5

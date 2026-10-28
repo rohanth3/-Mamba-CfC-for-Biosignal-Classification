@@ -1,0 +1,28 @@
+# Python environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache & testing
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.log
+
+# Large Datasets & Raw/Preprocessed Arrays (>100MB limits)
+Ninapro DB1/
+data/*.h5
+data/*.mat
+*.mat
+*.h5
+
+# Keep metadata/configs in data
+!data/norm_stats.json
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

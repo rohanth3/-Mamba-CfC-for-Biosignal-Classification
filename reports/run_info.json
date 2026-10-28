@@ -1,0 +1,19 @@
+{
+    "timestamp": "2026-10-06T18:01:13.994350",
+    "config_hash": "dc5a182f29597a50e9f954e7e589f525",
+    "seed": 42,
+    "package_versions": {
+        "numpy": "2.4.6",
+        "h5py": "3.16.0",
+        "python": "3.11.9",
+        "scipy": "1.17.1",
+        "pyyaml": "6.0.3"
+    },
+    "subjects_processed": 27,
+    "files_processed": 81,
+    "windows_generated": {
+        "train": 833971,
+        "val": 187708,
+        "test": 233484
+    }
+}

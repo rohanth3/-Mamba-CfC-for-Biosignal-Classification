@@ -1,0 +1,24 @@
+Date: 2026-10-06
+Assertions: All data integrity, normalization isolation, architecture validation, and Mamba fallback (pscan) equivalence tests pass.
+
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
+cachedir: .pytest_cache
+rootdir: C:\Users\Rohanth Ganesha C\Documents\Capstone\Project
+plugins: anyio-4.15.1, platformdirs-4.12.3
+collecting ... collected 12 items
+
+tests/test_data.py::test_split_generation PASSED                         [  8%]
+tests/test_data.py::test_kfold_helper PASSED                             [ 16%]
+tests/test_data.py::test_shapes_labels_disjoint PASSED                   [ 25%]
+tests/test_data.py::test_data_integrity PASSED                           [ 33%]
+tests/test_data.py::test_subject_ids_match_splits PASSED                 [ 41%]
+tests/test_data.py::test_compute_norm_stats_integration PASSED           [ 50%]
+tests/test_data.py::test_train_normalization_sanity PASSED               [ 58%]
+tests/test_data.py::test_no_normalization_leakage PASSED                 [ 66%]
+tests/test_models.py::test_shapes_and_finite PASSED                      [ 75%]
+tests/test_models.py::test_hybrid_extra_parameters PASSED                [ 83%]
+tests/test_models.py::test_shared_structure PASSED                       [ 91%]
+tests/test_models.py::test_mamba_fallback_parallel_vs_sequential PASSED  [100%]
+
+======================= 12 passed in 195.00s (0:03:15) ========================
